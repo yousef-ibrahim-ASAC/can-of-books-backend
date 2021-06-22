@@ -12,6 +12,7 @@ const cors = require('cors'); // enable the communication between the frontend a
 
 app.use(cors());
 
+// middleware : will check the data before it go to the route
 app.use(express.json());  // this method is used to decode our request body sent by the post or put methods
 
 mongoose.connect('mongodb://localhost:27017/myFavoriteBooks',
@@ -25,7 +26,7 @@ app.get('/', (req, res) => {
 
 
 // seedUserData();
-
+// (REST or HTTP METHODS )={get , post , put , delete}
 app.get('/books', getBooks );  // Read route, get all the cats by the user email
 
 app.post('/book' , creatBook);  // Create route, which will receive new cats to be added for the user
