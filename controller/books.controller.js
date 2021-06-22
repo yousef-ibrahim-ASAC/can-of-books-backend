@@ -49,16 +49,16 @@ const updateBook = (request, response) => {
 }
 
 const deleteBook = (request, response) => {
-    const bookIndex = request.params.book_idx;
-    const { email } = request.body;
+    const index = request.params.book_idx;
+    const { email }  = request.body;
     console.log(request.query);
 
-    userModel.find({ email: email }, (error, userData) => {
+    userModel.findOne({ email: email }, (error, userData) => {
 
         if (error) {
             response.send(error);
-        } else {
-            userData.books.splice(bookIndex, 1);
+        } else {      
+            userData.books.splice(index, 1);
             userData.save();
             response.send(userData);
         }
