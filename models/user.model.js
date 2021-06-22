@@ -14,17 +14,17 @@ const seedUserData = () => {
     const newUser = new userModel({
         email: 'ibrahimalhamshari742@gmail.com',
         books: [
-            { name: 'ASME Book' , description:' For mechanical engineering', status:'Available'},
-            { name: 'API Book' , description:' For mechanical engineering', status:'Available'},
-            { name: 'Python Book' , description:' For software engineering', status:'Available'}
+            { name: 'ASME Book' , description:'For mechanical engineering', status:'Available'},
+            { name: 'API Book' , description:'For mechanical engineering', status:'Available'},
+            { name: 'Python Book' , description:'For software engineering', status:'Available'}
         ]
     });
 
     console.log(newUser);
 
     newUser.save();
-
 }
-seedUserData();
 
-module.exports = userModel;
+// seedUserData();
+
+module.exports = {userModel , seedUserData};
