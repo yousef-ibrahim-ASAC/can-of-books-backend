@@ -12,7 +12,7 @@ const userModel = mongoose.model('users', userSchema);
 
 const seedUserData = () => {
     const newUser = new userModel({
-        email: 'yousef.y.jalboush@gmail.com',
+        email: 'ibrahimalhamshari742@gmail.com',
         books: [
             { name: 'ASME Book' , description:'For mechanical engineering', status:'Available'},
             { name: 'API Book' , description:'For mechanical engineering', status:'Available'},
@@ -27,4 +27,4 @@ const seedUserData = () => {
 
 // seedUserData();
 
-module.exports = userModel;
+module.exports = {userModel , seedUserData};
