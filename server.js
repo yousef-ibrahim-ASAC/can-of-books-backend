@@ -27,13 +27,13 @@ app.get('/', (req, res) => {
 
 // seedUserData();
 // (REST or HTTP METHODS )={get , post , put , delete}
-app.get('/books', getBooks );  // Read route, get all the cats by the user email
+app.get('/books', getBooks );  // Read route, get all the books by the user email
 
-app.post('/book' , creatBook);  // Create route, which will receive new cats to be added for the user
+app.post('/book' , creatBook);  // Create route, which will receive new books to be added for the user
 
-app.put('/book/:book_idx' , updateBook);  // Update route, will will receive the cat id that we want to update, and its info in the body payload.
+app.put('/book/:book_idx' , updateBook);  // Update route, will will receive the book id that we want to update, and its info in the body payload.
 
-app.delete('/book/:book_idx' , deleteBook);  // Delete route, which will delete the cat by its index
+app.delete('/book/:book_idx' , deleteBook);  // Delete route, which will delete the book by its index
 
 
 
