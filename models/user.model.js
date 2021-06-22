@@ -12,11 +12,11 @@ const userModel = mongoose.model('users', userSchema);
 
 const seedUserData = () => {
     const newUser = new userModel({
-        email: 'ibrahimalhamshari742@gmail.com',
+        email: 'yousef.y.jalboush@gmail.com',
         books: [
-            { name: 'ASME Book' , description:' For mechanical engineering', status:'Available'},
-            { name: 'API Book' , description:' For mechanical engineering', status:'Available'},
-            { name: 'Python Book' , description:' For software engineering', status:'Available'}
+            { name: 'ASME Book' , description:'For mechanical engineering', status:'Available'},
+            { name: 'API Book' , description:'For mechanical engineering', status:'Available'},
+            { name: 'Python Book' , description:'For software engineering', status:'Available'}
         ]
     });
 
@@ -25,5 +25,7 @@ const seedUserData = () => {
     newUser.save();
 
 }
+
+// seedUserData();
 
 module.exports = userModel;
