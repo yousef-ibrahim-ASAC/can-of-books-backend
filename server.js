@@ -3,9 +3,9 @@ const app = express(); // initialize your express app instance
 const mongoose = require('mongoose');
 require('dotenv').config();
 const PORT = process.env.PORT;
-const seedUserData = require('./models/user.model');
+// const seedUserData = require('./models/user.model');
 const cors = require('cors'); // enable the communication between the frontend and the backend
-const seedUserData = require('./')
+
 
 app.use(cors());
 
@@ -24,7 +24,11 @@ app.get('/', (req, res) => {
 
 app.get('/books', getBooks )
 
-seedUserData();
+
+
+
+
+// seedUserData();
 
 app.listen(PORT, () => {
     console.log(`Server started on ${PORT}`);

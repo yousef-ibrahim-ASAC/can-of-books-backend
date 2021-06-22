@@ -25,5 +25,6 @@ const seedUserData = () => {
     newUser.save();
 
 }
+seedUserData();
 
 module.exports = userModel;
