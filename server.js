@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const PORT = process.env.PORT;
 const {getBooks, creatBook , updateBook, deleteBook} = require('./controller/books.controller');
-// const {seedUserData} = require('./models/user.model');
+const {seedUserData} = require('./models/user.model');
 const cors = require('cors'); // enable the communication between the frontend and the backend
 
 app.use(cors());

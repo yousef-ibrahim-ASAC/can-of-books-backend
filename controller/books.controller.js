@@ -17,7 +17,7 @@ const getBooks = (request, response) => {
 
 const creatBook = (request, response) => {
     // we need to get the email of the person and the name of the book, to add to that person
-    const { email, bookName } = request.body;  // the email and the name will saved from the request.
+    const { email, bookName , description , status , url } = request.body;  // the email and the name will saved from the request.
 
     userModel.findOne({ email: email }, (error, userData) => {  // will chek if the email found or not.
         if (error) {
@@ -25,7 +25,12 @@ const creatBook = (request, response) => {
         } else {
             // here we are going to add the new cat
             console.log(userData.books);
-            userData.books.push({ name: bookName });
+            userData.books.push({ 
+                name: bookName,
+                description, 
+                status,
+                url
+            });
             userData.save();
             response.json(userData);
         }
@@ -35,13 +40,18 @@ const creatBook = (request, response) => {
 
 const updateBook = (request, response) => {
     const index = request.params.book_idx;
-    const { email, bookName } = request.body;
+    const { email, bookName , description , status , url } = request.body;
 
     userModel.findOne({ email: email }, (error, userData) => {
         if (error) {
             response.send(error);
         } else {
-            userData.books.splice(index, 1, { name: bookName });
+            userData.books.splice(index, 1, { 
+                name: bookName ,
+                description, 
+                status,
+                url
+            });
             userData.save();
             response.send(userData);
         }
