@@ -60,7 +60,7 @@ const updateBook = (request, response) => {
 
 const deleteBook = (request, response) => {
     const index = request.params.book_idx;
-    const { email }  = request.body;
+    const { email }  = request.query;
     console.log(request.query);
 
     userModel.findOne({ email: email }, (error, userData) => {

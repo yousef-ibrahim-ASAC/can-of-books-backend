@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const PORT = process.env.PORT;
 const {getBooks, creatBook , updateBook, deleteBook} = require('./controller/books.controller');
-const {seedUserData} = require('./models/user.model');
+// const {seedUserData} = require('./models/user.model');
 const cors = require('cors'); // enable the communication between the frontend and the backend
 
 app.use(cors());
@@ -15,12 +15,7 @@ app.use(cors());
 // middleware : will check the data before it go to the route
 app.use(express.json());  // this method is used to decode our request body sent by the post or put methods
 
-// mongoose.connect(
-//     'mongodb+srv://yousefabujalboush:YoYo_0787366592_devill@cluster0.rtfdk.mongodb.net/myFavoritBooks?retryWrites=true&w=majority',
-// { useNewUrlParser: true, useUnifiedTopology: true}
-// );
-
-mongoose.connect('mongodb+srv://yousefabujalboush:YoYo_0787366592_devill@cluster0.rtfdk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+mongoose.connect('mongodb://localhost:27017/myFavoriteBooks',
 { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
@@ -30,7 +25,7 @@ app.get('/', (req, res) => {
 
 
 
-seedUserData();
+// seedUserData();
 // (REST or HTTP METHODS )={get , post , put , delete}
 app.get('/books', getBooks );  // Read route, get all the books by the user email
 
@@ -45,4 +40,3 @@ app.delete('/book/:book_idx' , deleteBook);  // Delete route, which will delete 
 app.listen(PORT, () => {
     console.log(`Server started on ${PORT}`);
 });
-
