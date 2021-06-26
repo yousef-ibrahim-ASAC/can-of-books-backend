@@ -15,15 +15,18 @@ app.use(cors());
 // middleware : will check the data before it go to the route
 app.use(express.json());  // this method is used to decode our request body sent by the post or put methods
 
+
 // mongoose.connect('mongodb://localhost:27017/myFavoriteBooks',
 // { useNewUrlParser: true, useUnifiedTopology: true }
 // );
 
-
-
 mongoose.connect(process.env.MONGO_URL,
 { useNewUrlParser: true, useUnifiedTopology: true }
 );
+
+// mongoose.connect('mongodb://localhost:27017/myFavoriteBooks',
+// { useNewUrlParser: true, useUnifiedTopology: true }
+// );
 
 app.get('/', (req, res) => {
     res.send('Your API Server is running now');

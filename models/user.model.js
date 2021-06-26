@@ -12,7 +12,7 @@ const userModel = mongoose.model('users', userSchema);
 
 const seedUserData = () => {
     const newUser = new userModel({
-        email: 'yousef.y.jalboush@gmail.com',
+        email: 'ibrahimalhamshari742@gmail.com',
         books: [
             { name: 'ASME Book' , description:'For mechanical engineering', status:'Available' , url : 'https://images-na.ssl-images-amazon.com/images/I/41MPwsWY-4L._SX258_BO1,204,203,200_.jpg'},
             { name: 'API Book' , description:'For mechanical engineering', status:'Available' , url : 'https://m.media-amazon.com/images/I/51wk-MbYCNL._SL500_.jpg'},
